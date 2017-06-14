@@ -1,0 +1,1830 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"22994125","transactionName":"ZQcBbEpSXEoAU0FcDVxNJU1WUEZQDl4aRRFZADxPXVFBUBVVG0MLVxUQAllBRlACXFBqFFsHFA==","applicationTime":22,"licenseKey":"fb4eda8bc8","errorBeacon":"bam.nr-data.net","agent":"","beacon":"bam.nr-data.net","queueTime":4}</script>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+    
+            <meta property="og:site_name" content="hack.guides()" />
+            
+        
+
+    <!-- FB share/like are really bad at picking up the right info without these -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Building a CRUD interface with React and Ruby on Rails" />
+    <meta property="og:url" content="http://www.pluralsight.com/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails" />
+    <meta property="og:description" content="Open-source guide from hack.guides() authored by Hristo Georgiev" />
+
+
+    
+        <meta property="og:image" content="https://www.pluralsight.com/guides/static/img/stack_images/ruby-ruby-on-rails.png" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="400" />
+    
+
+
+
+        
+    
+        
+        <title>Building a CRUD interface with React and Ruby on Rails (Example) | hack.guides()</title>
+    
+
+
+        <link rel="shortcut icon" type="image/png" href="/guides/static/img/favicon.png">
+
+        
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="/guides/static/css/base.css" rel="stylesheet">
+
+        
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6966154/691568/css/fonts.css"/>
+        
+
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6966154/691568/css/fonts.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
+        
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/guides/static/css/vendor/hljs_github-gist.css">
+    <link rel="stylesheet" href="/guides/static/css/vendor/github-markdown.css">
+
+
+        
+    
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
+        <script src="/guides/static/js/utils.js"></script>
+        
+    <!-- base -->
+    <script src="/guides/static/js/vendor/editor/highlight.pack.js"></script>
+    <!-- marked -->
+    <script src="/guides/static/js/vendor/underscore-min.js"></script>
+    <script src="/guides/static/js/vendor/vdom/blake2s.min.js"></script>
+    <script src="/guides/static/js/vendor/editor/marked.min.js"></script>
+    <script src="/guides/static/js/marked_settings.js"></script>
+    <!-- page -->
+    <script src="/guides/static/js/utils.js"></script>
+
+    <script type="text/javascript">
+        
+            /* Share with old URL to maintain the share counts */
+            window.pwidget_config = {
+                defaults: { url: "http://tutorials.pluralsight.com/review/building-a-crud-interface-with-react-and-ruby-on-rails"}
+            };
+        
+        (function () {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = ('https:' == document.location.protocol ? 'https://s' : 'http://i')
+            + '.po.st/static/v4/post-widget.js#publisherKey=plv5t1o0it9b73ect06v';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+
+    
+        
+        <!--Load up mini-demandbase for DTM use -->
+        <script type="text/javascript">
+            // load remote script into head with callback
+            window.loadRemoteScript = function(u,t,a,i,cb) {
+                var lrs = document.createElement("script")
+                lrs.type = (t || "text/javascript");
+                lrs.id = (i || null);
+                if(a==true){lrs.async = (a || 1);}
+
+                if (lrs.readyState){  //IE
+                    lrs.onreadystatechange = function(){
+                        if (lrs.readyState == "loaded" || lrs.readyState == "complete"){
+                            lrs.onreadystatechange = null;
+                            cb();
+                        }
+                    };
+                } else {  //Others
+                    lrs.onload = function(){
+                        cb();
+                    };
+                }
+
+                lrs.src = ('https:'==document.location.protocol ? 'https://' : 'http://') + u;
+                document.getElementsByTagName("head")[0].appendChild(lrs);
+            }
+
+            //callback when demandbase api returns (and initialize holder var to later be replaced by library call)
+            var Demandbase = {};
+            window.minidbready = function(a) {
+                Demandbase = { IP: { CompanyProfile: a} };
+            }
+
+            //DEMANDBASE FULL LIBRARIES
+            loadRemoteScript(
+            'scripts.demandbase.com/LrYAV7hU.min.js',
+            'text/javascript',
+            1,
+            'demandbase_js_secondary_libs',
+            function() {
+                window.dbReady = true;
+            }
+            )
+
+        </script>
+
+        <script src="//assets.adobedtm.com/2c5f2b30762ae62377916c09612cd9d60054fba9/satelliteLib-d219ec1f03bb8f042fe31ffc29deb53997d778ef.js"></script>
+
+        
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+
+        
+    
+            <div id="header-white" class="flash-msgs">
+                
+                    
+                                    <nav class="navbar">
+                                    <div class="navbar-header">
+                        <div class="hack-links">
+                            <a class="navbar-brand" href="/guides/">
+                                
+                                <img src="/guides/static/img/logos/hackguides-black-470x80.png" width="199" height="43" alt="hack.guides()">
+                                
+                            </a>
+                            <a class="navbar-brand" href="#">
+                                <svg class="hack-links-plus-icon" width='20px' height='20px' viewbox='0 0 51 50' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns'>
+                                    <g stroke='none' stroke-width='1' fill-rule='evenodd' fill='#8A8B87'>
+                                    <path d='M25.033,0 C11.226,0 0.033,11.19 0.033,25 C0.033,38.81 11.226,50 25.033,50 C38.841,50 50.033,38.81 50.033,25 C50.033,11.19 38.841,0 25.033,0 L25.033,0 Z M25.033,1.6 C37.936,1.6 48.434,12.1 48.434,25 C48.434,37.9 37.936,48.4 25.033,48.4 C12.131,48.4 1.633,37.9 1.633,25 C1.633,12.1 12.131,1.6 25.033,1.6 L25.033,1.6 Z'></path>
+                                    <path d='M26.033,24 L26.033,10 L24.033,10 L24.033,24 L10.033,24 L10.033,26 L24.033,26 L24.033,40 L26.033,40 L26.033,26 L40.033,26 L40.033,24 L26.033,24 Z'></path>
+                                    </g>
+                                </svg>
+                            </a>
+
+                            <div class="external-hack-links">
+                                <a class="hacksummit" href="http://hacksummit.org"><img src="/guides/static/img/logos/hacksummit-470x80.png" alt="hack.summit()" width="200" height="43" title="hacksummit"></a>
+
+                                <a class="hackpledge" href="http://hackpledge.org"><img src="/guides/static/img/logos/hackpledge-470x80.png" alt="hack.pledge()" width="200" height="43" title="hackpledge"></a>
+                            </div>
+                        </div>
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="/guides/faq">Our Mission</a></li>
+                            <li><a href="/guides/in-review">Review</a></li>
+                            <li><a href="/guides/contributors">Contributors</a></li>
+
+                            
+                            <li><a href="/guides/login" class="cta-text">Sign in with Github</a></li>
+                            
+
+                            
+
+                            
+                        </ul>
+                    </div>
+            </nav>
+                    
+                
+
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    
+                
+            </div>
+        
+
+
+        <div id="body">
+            <div class="container">
+
+                
+<div class="row">
+    <div id="article-sidebar" class="col-md-2 affix">
+        <p>
+            <a href="/guides/faq" class="emphasize-dark">What is this site?</a>
+        </p>
+
+        <br />
+
+        <p>
+            <a href="/guides/write/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails?branch=master">Edit this guide <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+        </p>
+        <p>
+            <a href="https://github.com/pluralsight/guides/blob/master/published/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails/article.md" target="_blank">View guide on Github
+            <span class="glyphicon glyphicon-new-window" aria-hidden="true" style="font-size: 10px;"></span></a>
+        </p>
+
+        <div id="table-of-contents">
+            <h4>Table of Contents</h4>
+            <div class="hr-container">
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
+    
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginForm">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginLabel">Must login to heart a guide</h4>
+      </div>
+      <div class="modal-body">
+        <p class="login-button"> <a href="/guides/github_login" class="btn-primary btn btn-lg">Login with Github</a> </p>
+
+<br />
+
+<h2>Why Github?</h2>
+
+<ol>
+    <li>Most developers already have an account</li>
+    <li>Link all your contributions to your profile on the biggest social coding platform</li>
+    <li>
+        All the <a href="http://github.com/pluralsight/guides-cms" target="_blank">code for this CMS</a> and <a href="http://github.com/pluralsight/guides" target="_blank" >the guides</a> are hosted on Github
+    </li>
+</ol>
+
+<h3>Why should you participate?</h3>
+
+<ol>
+    <li>Share your knowledge and best-practices with the wider developer community</li>
+    <li>Make a meaningful impact to open-source knowledge</li>
+    <li>Build thought leadership through your writing</li>
+    <li>Vote on other guides to help surface the best content to the top of the site</li>
+</ol>
+
+<h3>Our promise</h3>
+
+We're built on the power of open-source and with the goal of educating the
+world, so we promise to be good stewards of your Github account.  You can
+always disable access directly from Github if you change your mind.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Continue reading</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <div id="article" class="col-md-10 col-md-offset-2">
+        
+
+        <div id="article-header">
+            
+                <img id="article-img" src="https://avatars.githubusercontent.com/u/6340189?v=3&amp;s=126" width="40" height="40" style="border-radius: 22px;" alt="Kaizeras"/>
+            
+                <h2 id="author"><a href="/guides/author/Kaizeras">Hristo Georgiev</a></h2>
+            
+                <br />
+                <h3 id="related"><small>Related to Ruby, Ruby on Rails</small></h3>
+            
+
+            
+                <span class="heart-guide heart-info heart-empty" title="Let the community know this guide was useful">
+                    <span class="heart-count">43</span>
+                </span>
+            
+
+        </div><!-- article-header -->
+
+        <h1 id="title">Building a CRUD interface with React and Ruby on Rails</h1>
+
+        <p id="article_content" style="display: none;" class="markdown-body">
+        </p>
+        <textarea id="__initial_content__" style="display:none;">The JavaScript world is currently in great turbulence. A new framework pops up daily, developers are confused about which tools they’re supposed to pick up, and building user interfaces is experiencing dramatic changes. On top of that, us Rails developers know that .erb views are going out of fashion, too--and being replaced by much more sophisticated JavaScript-based frameworks. Given all this, it can be difficult to pick up something to commit to.
+
+Fortunately, Facebook’s [React](https://facebook.github.io/react/docs/reconciliation.html) provides a ray of hope by promising a novel approach to building user interfaces. Even better, Rails can seamlessly integrate with it, and it’s easy to set up a Rails API application and to build its view layer with React. So, let’s take a look at how to build a simple Rails API that accommodates create, read, update and delete functionality for a single model with React. 
+
+Setting up a basic Rails API
+--
+
+#### Setting up the model
+
+We’re going to employ a different approach to the application’s architecture. We’ll use Rails only to render data in JSON, while React will handle the views and the displaying of data. This will separate the Rails application from the view layer. 
+
+First, let’s initialize an empty rails application:
+
+```bash
+$ rails new item_cart
+```
+
+Now, let’s create the model for which we’ll build a CRUD interface:
+
+```bash
+$ rails g model Item name:string description:text
+```
+
+This will create a model with a name and description attributes, and a database migration for it.  We just need to add the model to the database schema.
+
+```bash
+$ rake db:migrate
+```
+
+#### Adding some seed data
+
+Now it’s time to populate our database with some sample data! We’ll need it to make sure what we’re going to implement works properly. The following script will populate our database with 10 arbitrary items.
+
+
+```ruby
+#db/seeds.rb
+
+10.times { Item.create!(name: &#34;Item&#34;, description: &#34;I am a description.&#34;) }
+
+```
+
+```bash
+$ rake db:seed
+```
+
+#### Setting up the controllers
+
+Time to move to the controllers. First, we’ll install the `responders` gem, which will let us apply a `respond_to` rule to all the actions in our controllers, making the code DRY-er. 
+Put the gem in your gemfile and bundle it:
+
+```ruby
+gem &#39;responders&#39;
+```
+
+```bash
+$ bundle
+```
+
+Second, we’ll make a small adjustment to the application controller. Except throwing an exception, we’ll make the controller throw a `null session` because we’re going to request json, which is different to the html (which is requested by default).
+
+
+```ruby
+#application_controller.rb
+
+
+class ApplicationController &lt; ActionController::Base
+  protect_from_forgery with: :null_session
+end
+
+```
+
+
+Because this is an API-based application, we’ll structure the controllers using namespaces. By convention, we have to put the controllers for the different namespaces in folders corresponding to their namespace. For example, all controllers belonging to the `api` namespace must be put in a folder named ‘api’.  In the ‘controllers’ folder (in our application), we’ll create a folder named `api` and, in it, another folder named `v1`:
+
+```bash
+app/controllers/api/v1
+```
+
+In the `app/controllers/api/v1` directory, we’ll create two controllers. The base_controller will have global rules that apply to all of our API-based controllers.
+
+
+```ruby
+#base_controller.rb
+
+class Api::V1::BaseController &lt; ApplicationController
+  respond_to :json
+end
+
+```
+
+The respond_to method ensures that all actions from the controllers, which inherit from the base controller, will respond with JSON. This is the standard approach for building JSON-based APIs. After we’re done with the base controller, we can create a controller for our Item model. We’ll make the controller inherit from the base controller and put the standard index, create update and destroy actions.
+
+
+```ruby
+#items_controller.rb
+
+class Api::V1::ItemsController &lt; Api::V1::BaseController
+  def index
+    respond_with Item.all
+  end
+
+  def create
+    respond_with :api, :v1, Item.create(item_params)
+  end
+
+  def destroy
+    respond_with Item.destroy(params[:id])
+  end
+
+  def update
+    item = Item.find(params[&#34;id&#34;])
+    item.update_attributes(item_params)
+    respond_with item, json: item
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:id, :name, :description)
+  end
+end
+
+```
+
+The respond_with method is part of the `responders` gem and will return a JSON object with the results of each action in the controller.
+
+The routing for the controller has to consider the fact that it’s within two namespaces; API and V1. We’ll do this using the namespace method.
+
+#### Routing the controllers
+
+
+```ruby
+#app/config/routes.rb
+
+Rails.application.routes.draw do
+    namespace :api do
+      namespace :v1 do
+        resources :items, only: [:index, :create, :destroy, :update]
+      end
+    end
+  end
+
+
+```
+To see if everything works, go to:
+
+```bash
+http://localhost:3000/api/v1/items.json
+```
+
+If you see an array for JSON objects, you’re good to go!
+
+We’re done with the API, but where will we render React? Let’s build a static view where the application will lead us. First, we’ll have to create a controller that’s solely responsible for rendering the static view.
+
+
+```ruby
+#app/controllers/site_controller.rb
+
+
+class SiteController &lt; ApplicationController
+  def index
+  end
+end
+
+```
+
+
+```ruby
+
+#app/config/routes.rb
+Rails.application.routes.draw do
+  root to: &#39;site#index&#39;
+```
+
+
+#### Adding React to Rails
+
+Add `react-rails` to the Gemfile.
+
+```ruby
+gem &#39;react-rails&#39;
+```
+
+```bash
+$ bundle
+$ rails g react:install
+```
+
+The react:install generator will automatically include the react JavaScript library in your asset pipeline
+
+
+```bash
+$ rails g react:install
+        create app/assets/javascripts/components
+        create app/assets/javascripts/components/.gitkeep
+        insert app/assets/javascripts/application.js
+        insert app/assets/javascripts/application.js
+        insert app/assets/javascripts/application.js
+        create app/assets/javascripts/components.js
+```
+
+Like JQuery and the rest of the JavaScript libraries, react and react_ujs are included in the asset pipeline. The components folder in the `assets/javascripts` directory is where we’ll store our components. Speaking of components, these are the building blocks of the React framework. They’re used to separate the different sections of a user interface and are structured in a parent-child relationship, similar to the way nested AngularJS controllers work.
+
+For example, let’s say you want to build a simple layout with a body, header and a list of items. Here’s how its hierarchy would be structured:
+
+![](http://i.imgur.com/jzjTEXb.png)
+
+`&lt; Main/ &gt;` renders `&lt; Header/ &gt;` and `&lt; Body/ &gt;` and sends information down the hierarchy. `&lt; Header / &gt;` may receive information about the current user and the menu and `&lt; Body / &gt;` can receive an array of items. The `&lt; items / &gt;` component will take the information and create a list of `&lt; item / &gt;` components which will contain data about every single object. The `&lt; Attributes / &gt;` component will contain information about the items and `&lt; Actions / &gt;` will contain a delete and edit button.
+
+To make Rails render React components, we need to add the react_component view helper to our root route.
+
+
+```ruby
+#app/views/site/index.html.erb
+
+&lt;%= react_component &#39;Main&#39; %&gt;
+```
+
+The `react_component` is part of react-rails. In this case, it’s used to put the component named `Main` from the components folder in the assets directory into the view.
+
+#### The first component
+
+The first thing we need to do is to set-up a jsx file in our components folder.
+
+
+```javascript
+// app/assets/javascripts/components/_main.js.jsx
+
+var Main = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello, World!&lt;/h1&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+The `js.jsx` in React components works the same way as `html.erb` works for Rails; it’s an extension used to recognize the view files of the framework. This component has only one method; `render()`.  In this case, it’s used to return static html to the page. The `render()` method also triggers `render()` to all child components of the parent component, eventually printing all the components on the page. Each React component can only return one element, so all jsx elements in the return statement need to be in one wrapper div.
+
+The `&lt;Main /&gt;` component has two child components; `&lt;Header /&gt;` and `&lt;Body /&gt;`. Let’s start with the `&lt;Header /&gt;` first.
+
+
+```javascript
+
+// app/assets/javascripts/components/_header.js.jsx
+
+var Header = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello, World!&lt;/h1&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+```
+
+
+
+And change our `&lt;Main /&gt;` component so that it will render `&lt;Header /&gt;` in its render function.
+
+
+```javascript
+
+// app/assets/javascripts/components/_main.js.jsx
+
+var Main = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Header /&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+Great! We just nested two components together.
+
+
+Rendering all the items
+--
+
+As previously mentioned. All the items will be listed in the `&lt;Body /&gt;` component. The `&lt;Body /&gt;` component will also contain a form for inserting new items. Here’s the list of files that need to be created:
+
+```bash
+app/assets/javascripts/components/_body.js.jsx
+app/assets/javascripts/components/_all_items.js.jsx
+app/assets/javascripts/components/_new_items.js.jsx
+```
+
+First, let’s start with listing all the items. Listing them will include making a request to the server to fetch all the items into our component using an AJAX request. We need to do it when the component gets rendered into the DOM. React has several built-in methods that handle different events during a component’s lifespan. There are methods that execute before and after component mounts into the DOM or before and after it dismounts from the DOM. In this case, we need a method that will handle the AJAX request when the component mounts.
+We’ll use `componentDidMount()`, which is called right after the component is mounted. You can find out about other component methods and how to use them in [React’s documentation](https://facebook.github.io/react/docs/component-specs.html).
+
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var AllItems = React.createClass({
+    componentDidMount() {
+        console.log(&#39;Component mounted&#39;);
+    },
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;All items component&lt;/h1&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+
+```
+
+Here’s how you implement the `componentDidMount()` method. Note how the methods are separated:  If we take a closer look at the `React.createClass` function, they’re defined as object properties, and they should be separated by commas. Don’t fret if you don’t see the `console.log()` message in your application - we still haven’t included it in a parent component and it won’t mount into the DOM!
+
+Before we fetch information from the server, we need to know how data is stored in the component. When the component is mounted, its data has to be initialized. This is done by the `getInitialState()` method. 
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var AllItems = React.createClass({
+    getInitialState() {
+        return { items: [] }
+    },
+
+```
+
+Now, we need to get the data from the server and assign it to the items object. Here’s how we do it:
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+getInitialState() {
+        return { items: [] }
+},
+
+componentDidMount() {
+    $.getJSON(&#39;/api/v1/items.json&#39;, (response) =&gt; { this.setState({ items: response }) });
+},
+
+```
+
+We use the `getJSON` method with the URL of the `items.json` as an argument, and we use the `setState` function of the component to put the response into the items object.
+
+Okay, we’ve got the items, but how do we render them? We’re going to iterate through them in our `render()` method.
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+//getInitialState and componentDidMount
+
+render() {
+    var items= this.state.items.map((item) =&gt; {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{item.name}&lt;/h3&gt;
+                &lt;p&gt;{item.description}&lt;/p&gt;
+            &lt;/div&gt;
+        )
+    });
+
+    return(
+        &lt;div&gt;
+            {items}
+        &lt;/div&gt;
+    )
+}
+
+```
+
+The map method is similar to the each method in the `.erb` templates. It iterates through the array of items and displays the items’ attributes using bracket notation. The brackets are equivalent to Rails’ `&lt;%= =&gt;` tags. They’re used to inject the item attributes into the html, making it dynamic. It eventually returns the items variable, which now is a DOM element with item attributes wrapped in html elements.
+
+But hold on--we’re not done just yet! When we iterate through items in React, there must be a way to identify each item into the component’s DOM. For that, we’ll use a unique attribute of each item, also known as `key`. To add a key to the item, we need to use the key attribute in the div that wraps it, like this:
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+    var items= this.state.items.map((item) =&gt; {
+        return (
+            &lt;div key={item.id}&gt;
+                &lt;h3&gt;{item.name}&lt;/h3&gt;
+                &lt;p&gt;{item.description}&lt;/p&gt;
+            &lt;/div&gt;
+        )
+    });
+
+    return(
+        &lt;div&gt;
+            {items}
+        &lt;/div&gt;
+    )
+}
+
+```
+
+
+Did you notice the key attribute in the div element that’s used in the iterator method in the items variable? Keys play an important part in lists of similar elements, as they provide a way for them to be identified and interacted with. You can learn more about keys in the [React’s documentation](https://facebook.github.io/react/docs/reconciliation.html).
+
+Let’s test if everything is working. First, `&lt;Body /&gt;` , the parent component of `&lt;AllItems /&gt;` and `&lt;NewItem /&gt;` must be put into the `&lt;Main /&gt;` component.
+
+
+```javascript
+// app/assets/javascripts/components/_main.js.jsx
+var Main = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Header /&gt;
+                &lt;Body /&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+We must add the `&lt;AllItems /&gt;` and `&lt;NewItem /&gt;` components into the body component, just like we included. In the `&lt;Body /&gt;` component, we’ll include the rest of the nested components, respectively:
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+var Body = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;NewItem /&gt;
+                &lt;AllItems /&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+
+```
+
+Great! You should now see all the items displayed.
+
+Adding a new item
+--
+
+Time to move on to the next file we created previously; 
+
+
+
+```javascript
+//app/assets/javascripts/components/_new_item.js.jsx
+
+var NewItem= React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;new item&lt;/h1&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+```
+
+
+
+What’s needed to create a new item? We must create two input fields and send them to the server via POST request. When the new item is created, we have to reload our list of items so that they include the newly created one.
+
+Let’s add the form fields and the button to handle the submission.
+
+
+```javascript
+// app/assets/javascripts/components/_new_item.js.jsx
+
+var NewItem= React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+
+                &lt;input ref=&#39;name&#39; placeholder=&#39;Enter the name of the item&#39; /&gt;
+                &lt;input ref=&#39;description&#39; placeholder=&#39;Enter a description&#39; /&gt;
+                  &lt;button&gt;Submit&lt;/button&gt;
+              &lt;/div&gt;
+              )
+
+        )
+    }
+});
+
+```
+
+
+Everything looks familiar, except for the ref attribute. The ref attribute is used to reference the element in the component. Its function is similar to the `name` attribute in AngularJS. Instead of finding elements by id or by class, we do it by ref. In this particular case, the ref will be used to get the value of the text field and send it to the server.
+
+If you tried to click the `submit` button, you’ll notice that nothing happens. So let’s add an event handler! To do this, we need to slightly alter the html of the button:
+
+```javascript
+&lt;button onClick={this.handleClick}&gt;Submit&lt;/button&gt;
+
+```
+
+Once we have this, when we click the button the component will look for the `handleClick()` function. We must define it in the JavaScript file.
+
+
+```javascript
+// app/assets/javascripts/components/_new_item.js.jsx
+
+// var NewItem = …
+handleClick() {
+    var name    = this.refs.name.value;
+    var description = this.refs.description.value;
+    
+   console.log(&#39;The name value is &#39; + name + &#39;the description value is &#39; + description);
+
+
+},
+
+//render()..
+
+
+```
+
+This time, if you put text in the input fields and you click the button, it will print out the values of the input fields in the JavaScript console. Here you can see how the refs attribute is used in order to get the value out of the input field. Instead of sending the values to the console, we’re going to send them to the server. Here’s how this will happen: 
+
+
+```javascript
+// app/assets/javascripts/components/_new_item.js.jsx
+
+var NewItem= React.createClass({
+    handleClick() {
+        var name    = this.refs.name.value;
+        var description = this.refs.description.value;
+        $.ajax({
+            url: &#39;/api/v1/items&#39;,
+            type: &#39;POST&#39;,
+            data: { item: { name: name, description: description } },
+            success: (response) =&gt; {
+                console.log(&#39;it worked!&#39;, response);
+            }
+        });
+    },
+    render() {
+        return (
+                &lt;div&gt;
+                    &lt;input ref=&#39;name&#39; placeholder=&#39;Enter the name of the item&#39; /&gt;
+                    &lt;input ref=&#39;description&#39; placeholder=&#39;Enter a description&#39; /&gt;
+                    &lt;button onClick={this.handleClick}&gt;Submit&lt;/button&gt;
+                &lt;/div&gt;
+
+        )
+    }
+});
+
+```
+
+We send a `POST` request to the URL endpoint for the items using `$.ajax` . The response contains an object with the item’s name and description. Its callback prints the response from the server in the console. Try it out!
+
+Everything goes well, but there seems to be a problem: We have to restart the page in order to see the new item. How can we make this better?  `&lt;NewItem /&gt;` and `&lt;AllItems /&gt;` cannot communicate between each other because they’re on the same level. As we know, we can send data only down the component hierarchy. This means that we have to move the storing of the items of the `&lt;AllItems /&gt;` state to an upper layer; we must move it to the `&lt;Body /&gt;` component. 
+
+Move `getInitialState()` and `componentDidMount()` from `&lt;Allitems /&gt;` to `&lt;Body /&gt;`. Now, the items will be fetched when `&lt;Body /&gt;` is loaded. We can send variables down the children components with `props`. Props are immutable in the child and, in order to reach them, we need to use `this.props`. In our case, instead of using `this.state.items`, we’ll use `this.props.items`. 
+
+Here’s how we’ll send down the items from `&lt;Body /&gt;` to `&lt;AllItems /&gt;` :
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+&lt;AllItems items={this.state.items} /&gt; 
+```
+
+Here’s how they’re going to be referenced in  `&lt;AllItems /&gt;` :
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var items= this.props.items.map((item) =&gt; {
+
+```
+
+
+We can also pass functions as properties down the components hierarchy. Let’s do that with `handleSubmit()` in `&lt;NewItem /&gt;`. Just like the items array, we’ll move the function to its parent `&lt;Body /&gt;` component as well.
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+// getInitialState() and componentDidMount()
+
+    handleSubmit(item) {
+        console.log(item);
+    },
+
+// renders the AllItems and NewItem component
+
+
+```
+Then, let’s reference the function in the child component, just like we did with the array:
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.js
+
+&lt;NewItem handleSubmit={this.handleSubmit}/&gt;
+
+```
+
+In the `&lt;NewItem /&gt;` component, we’ll pass the function as part of `this.props` and pass on the object from the AJAX request as an argument of the parent:
+
+
+```javascript
+// app/assets/javascripts/components/_new_item.js.jsx
+
+handleClick() {
+    var name    = this.refs.name.value;
+    var description = this.refs.description.value;
+    $.ajax({
+        url: &#39;/api/v1/items&#39;,
+        type: &#39;POST&#39;,
+        data: { item: { name: name, description: description } },
+        success: (item) =&gt; {
+            this.props.handleSubmit(item);
+        }
+    });
+}
+
+
+```
+
+Now, when you click the submit button, the JavaScript console will log the object we just created. Awesome! We’re almost there. We just need to add the new item to the items array instead of logging it to the console.
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+// getInitialState() and componentDidMount()
+
+    handleSubmit(item) {
+        var newState = this.state.items.concat(item);
+        this.setState({ items: newState })
+    },
+
+// renders the AllItems and NewItemcomponent
+
+```
+
+
+Everything should now be working right. Since a lot of code was moved in this step, here are the updated files, so that you can check if you have followed through correctly:
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var AllItems = React.createClass({
+    render() {
+        var items= this.props.items.map((item) =&gt; {
+            return (
+                &lt;div key={item.id}&gt;
+                    &lt;h3&gt;{item.name}&lt;/h3&gt;
+                    &lt;p&gt;{item.description}&lt;/p&gt;
+                &lt;/div&gt;
+            )
+        });
+
+        return(
+            &lt;div&gt;
+                {items}
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+var Body = React.createClass({
+    getInitialState() {
+        return { items: [] }
+    },
+
+
+    componentDidMount() {
+        $.getJSON(&#39;/api/v1/items.json&#39;, (response) =&gt; { this.setState({ items: response }) });
+    },
+
+
+
+    handleSubmit(item) {
+        var newState = this.state.items.concat(item);
+        this.setState({ items: newState })
+    },
+
+
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;NewItem handleSubmit={this.handleSubmit}/&gt;
+                &lt;AllItems  items={this.state.items} /&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+```
+
+
+
+```javascript
+// app/assets/javascripts/components/_new_item.js.jsx
+
+var NewItem= React.createClass({
+    handleClick() {
+        var name    = this.refs.name.value;
+        var description = this.refs.description.value;
+        $.ajax({
+            url: &#39;/api/v1/items&#39;,
+            type: &#39;POST&#39;,
+            data: { item: { name: name, description: description } },
+            success: (item) =&gt; {
+                this.props.handleSubmit(item);
+            }
+        });
+    },
+    render() {
+        return (
+                &lt;div&gt;
+                    &lt;input ref=&#39;name&#39; placeholder=&#39;Enter the name of the item&#39; /&gt;
+                    &lt;input ref=&#39;description&#39; placeholder=&#39;Enter a description&#39; /&gt;
+                    &lt;button onClick={this.handleClick}&gt;Submit&lt;/button&gt;
+                &lt;/div&gt;
+
+        )
+    }
+});
+
+```
+
+
+Deleting an item
+--
+
+Deleting items is similar to creating new ones. The first thing we need to do is to add a button and a function (for handling the click for deleting an item in the `&lt;AllItems /&gt;` component).
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var AllItems = React.createClass({
+    handleDelete() {
+        console.log(&#39;delete item clicked&#39;);
+    },
+
+    render() {
+        var items= this.props.items.map((item) =&gt; {
+            return (
+                &lt;div key={item.id}&gt;
+                    &lt;h3&gt;{item.name}&lt;/h3&gt;
+                    &lt;p&gt;{item.description}&lt;/p&gt;
+                    &lt;button onClick={this.handleDelete}&gt;Delete&lt;/button&gt;
+                &lt;/div&gt;
+            )
+        });
+
+        return(
+            &lt;div&gt;
+                {items}
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+Second, we’re going to pass the reference to the function up to the parent `&lt;Body /&gt;` component, where the update of the list will be handled when the delete button is clicked.
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+    handleDelete() {
+        console.log(&#39;in handle delete&#39;);
+    },
+
+
+
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;NewItem handleSubmit={this.handleSubmit}/&gt;
+                &lt;AllItems  items={this.state.items} handleDelete={this.handleDelete}/&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+Now we’ll just pass the reference of the function in the parent component to the child component via `props` :
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+var AllItems = React.createClass({
+    handleDelete() {
+        this.props.handleDelete();
+    },
+
+    render() {
+    //the rest of the component
+```
+
+
+
+It all looks good, but how do we know which item we’re deleting?  We’re going to use the `bind()` method. The `bind()` method will bind the `id` of the item to `this`, causing the id to send as an argument.
+
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+handleDelete(id) {
+    this.props.handleDelete(id);
+},
+
+render() {
+    var items= this.props.items.map((item) =&gt; {
+        return (
+            &lt;div key={item.id}&gt;
+                &lt;h3&gt;{item.name}&lt;/h3&gt;
+                &lt;p&gt;{item.description}&lt;/p&gt;
+                &lt;button onClick={this.handleDelete.bind(this, item.id)} &gt;Delete&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    });
+
+```
+
+
+Now that we can send the id as an argument, we’re done with the second step. The third thing we need to do is to make an AJAX call to delete the item from the database. 
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+handleDelete(id) {
+    $.ajax({
+        url: `/api/v1/items/${id}`,
+        type: &#39;DELETE&#39;,
+        success(response) {
+            console.log(&#39;successfully removed item&#39;)
+        }
+    });
+},
+
+```
+
+
+Everything works, but we’re encountering the same problem we had with adding a new item; the page has to be restarted in order to see the results. Our last step is to change that; we will update the state by removing the item from the array of items upon successful deletion from the database. 
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+handleDelete(id) {
+    $.ajax({
+        url: `/api/v1/items/${id}`,
+        type: &#39;DELETE&#39;,
+        success:() =&gt; {
+           this.removeItemClient(id);
+        }
+    });
+},
+
+removeItemClient(id) {
+    var newItems = this.state.items.filter((item) =&gt; {
+        return item.id != id;
+    });
+
+    this.setState({ items: newItems });
+},
+
+
+```
+
+Remember to change the syntax of the `success` function from `success (response) {}` to `success: () =&gt; {}`, otherwise you’ll be referring to the promise of the response instead of the component itself.
+
+Editing an item
+--
+
+The last thing we’re going to do is implement editing and updating of items. We’ll add an edit button and a listener for it. When the edit button is clicked, the item will enter into `edit` mode in which the text attributes will turn into text fields. When the changes are submitted, an AJAX request will be made and, if it is successful, the item will be saved with the new attributes.
+
+First, we’ll implement the edit button and its event listener.
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+handleEdit() {
+
+},
+//render() and the rest of the tempalte
+&lt;button onClick={this.handleEdit()}&gt; Edit &lt;/button&gt;
+
+```
+
+With the editing mode, the code for a singular item will become too much, and following the rule of separation of concerns, we’ll have to move it to a separate component, which will be named &lt;Item/&gt;. This component will be used to contain the information and methods for a single item. The `handleEdit()` and `handleDelete()` functions will be referenced as properties of the component and, as such, will be referenced using the `this.props.*` notation.
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+render() {
+    var items= this.props.items.map((item) =&gt; {
+        return (
+            &lt;div key={item.id}&gt;
+                &lt;Item item={item}
+                       handleDelete={this.handleDelete.bind(this, item.id)}
+                       handleEdit={this.handleEdit}/&gt;
+            &lt;/div&gt;
+        )
+    });
+
+```
+
+
+Here’s how the `&lt;Item /&gt;` template will look:
+
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+var Item = React.createClass({
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{this.props.item.name}&lt;/h3&gt;
+                &lt;p&gt;{this.props.item.description}&lt;/p&gt;
+                &lt;button onClick={this.props.handleDelete} &gt;Delete&lt;/button&gt;
+                &lt;button onClick={this.props.handleEdit}&gt; Edit &lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+});
+
+```
+
+
+
+The html markup is similar to the one we used previously, but the attributes and the functions are accessed via `this.props`, since they were referenced as properties of the template. Now, test out the functionality to be sure everything works.
+
+Next, we’ll move `handleEdit()` to the `&lt;Item /&gt;` template. We’ll have a Boolean variable which we’ll toggle by clicking on the button. If the variable is set to true, the text is converted to input fields and vice versa.
+
+Let’s move the `handleEdit()` to `&lt;Item /&gt;`. We can simply do this by writing the method inside the component and changing the property of the button from `this.props.handleEdit` to `this.handleEdit`.
+
+```javascript
+// _app/assets/javascripts/components/_item.js.jsx
+&lt;button onClick={this.handleEdit}&gt; Edit &lt;/button&gt;
+
+```
+
+
+And initialize the method into the component:
+
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+var Item = React.createClass({
+    handleEdit() {
+        console.log(&#39;edit button clicked&#39;)
+    },
+
+
+```
+
+Now, we’ll have a state variable named editable `this.state.editable` that we’ll set to `false` initially, and set to `true` if the edit button is clicked.
+
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+var Item = React.createClass({
+    getInitialState() {
+        return {editable: false}
+    },
+    handleEdit() {
+        this.setState({editable: !this.state.editable})
+    },
+
+    render() {
+
+```
+
+
+A ternary operator must be implanted; this will render different elements depending whether `this.state.editable` is set to `true` or `false`. Here’s how to do that:
+
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+render() {
+    var name = this.state.editable ? &lt;input type=&#39;text&#39; defaultValue={this.props.item.name} /&gt; : &lt;h3&gt;{this.props.item.name}&lt;/h3&gt;;
+    var description = this.state.editable ? &lt;input type=&#39;text&#39; defaultValue={this.props.item.description} /&gt;: &lt;p&gt;{this.props.item.description}&lt;/p&gt;;
+    return (
+        &lt;div&gt;
+            {name}
+            {description}
+            &lt;button onClick={this.props.handleDelete} &gt;Delete&lt;/button&gt;
+            &lt;button onClick={this.handleEdit}&gt; Edit &lt;/button&gt;
+ …
+
+
+```
+The name and description variable are now dynamic; they will change depending on `this.state.editable`. Let’s do the same for the edit button:
+
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+&lt;button onClick={this.handleEdit}&gt; {this.state.editable ? &#39;Submit&#39; : &#39;Edit&#39; } &lt;/button&gt;
+```
+
+There’s something missing in the input fields. We’ll reference them in the component methods just as we did in `&lt;NewItem /&gt;`; there has to be a `ref` attribute in the input fields. Let’s add this attribute to the input fields and reference them in the `handleEdit()` method.
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+render() {
+    var name = this.state.editable ? &lt;input type=&#39;text&#39; ref=&#39;name&#39; defaultValue={this.props.item.name} /&gt; : &lt;h3&gt;{this.props.item.name}&lt;/h3&gt;;
+    var description = this.state.editable ? &lt;input type=&#39;text&#39; ref=&#39;description&#39; defaultValue={this.props.item.description} /&gt;: &lt;p&gt;{this.props.item.description}&lt;/p&gt;;
+
+
+```
+
+Now, add the code to reference the input fields in the method:
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+handleEdit() {
+    if(this.state.editable) {
+        var name = this.refs.name.value;
+        var description = this.refs.description.value;
+        console.log(&#39;in handleEdit&#39;, this.state.editable, name, description);
+
+    }
+    this.setState({ editable: !this.state.editable })
+},
+
+```
+
+
+Open your JavaScript console and try entering values into an item. Once you click the submit button, you will see the values displayed on the screen. We have the values in `&lt;Item /&gt;` and we have to send them up to the `&lt;Body /&gt;` where the array with all the items is stored and where we’re going to call our server. This means that we’ll use props functions to pass the data up the chain. The journey will start with `&lt;Item /&gt;`, pass to `&lt;AllItems /&gt;` and end up in `&lt;Body /&gt;`. Let’s start with `&lt;Item /&gt;` to `&lt;AllItems /&gt;`:
+
+```javascript
+// app/assets/javascripts/components/_item.js.jsx
+
+handleEdit() {
+    if(this.state.editable) {
+        var name = this.refs.name.value;
+        var id = this.props.item.id;
+        var description = this.refs.description.value;
+        var item = {id: id , name: name , description: description};
+        this.props.handleUpdate(item);
+
+    }
+    this.setState({ editable: !this.state.editable })
+},
+
+
+```
+
+In `&lt;AllItems /&gt;` we’ll add a `handleUpdate` method that will take the properties set in `onUpdate` and will pass these up to its own `onUpdate` property:
+
+```javascript
+// app/assets/javascripts/components/_all_items.js.jsx
+
+onUpdate(item) {
+    this.props.onUpdate(item);
+},
+
+render() {
+    var items= this.props.items.map((item) =&gt; {
+        return (
+            &lt;div key={item.id}&gt;
+                &lt;Item item={item}
+                      handleDelete={this.handleDelete.bind(this, item.id)}
+                      handleUpdate={this.onUpdate}/&gt;
+            &lt;/div&gt;
+        )
+    });
+
+
+```
+
+
+Finally, `&lt;Body /&gt;` will take the `onUpdate` property of `&lt;AllItems /&gt;` with the item in it.
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+handleUpdate(item) {
+    $.ajax({
+            url: `/api/v1/items/${item.id}`,
+            type: &#39;PUT&#39;,
+            data: { item: item },
+            success: () =&gt; {
+                console.log(&#39;you did it!!!&#39;);
+                //this.updateItems(item);
+                // callback to swap objects
+            }
+        }
+    )},
+
+
+render() {
+    return (
+        &lt;div&gt;
+            &lt;NewItem handleSubmit={this.handleSubmit}/&gt;
+            &lt;AllItems  items={this.state.items}  handleDelete={this.handleDelete} onUpdate={this.handleUpdate}/&gt;
+        &lt;/div&gt;
+    )
+}
+
+    )},
+
+
+```
+As you can see, we’ve managed to send the item up the components. (Note: Make sure the names of your function in the properties of the components are correct so that everything flows nicely.)
+
+The last thing that must be done in order to finish the functionality is to add a method in `&lt;Body /&gt;` to replace the newly updated item with the old one in the items array.
+
+
+```javascript
+// app/assets/javascripts/components/_body.js.jsx
+
+handleUpdate(item) {
+    $.ajax({
+            url: `/api/v1/items/${item.id}`,
+            type: &#39;PUT&#39;,
+            data: { item: item },
+            success: () =&gt; {
+                this.updateItems(item);
+
+            }
+        }
+    )},
+
+updateItems(item) {
+    var items = this.state.items.filter((i) =&gt; { return i.id != item.id });
+    items.push(item);
+
+    this.setState({items: items });
+},
+```
+
+
+
+That’s it! We managed to implement a full CRUD functionality for one model. Now you can improve your project by adding some styles to it or adding some extra information to the items themselves. [Here’s the github repository of the project we just created](https://github.com/Kaizeras/react-rails-tutorial).
+
+If you’d like to learn more about React with Rails, you can check out the official git repository of react-rails.  Or, if you’d like to learn more about React in general, you can check out its documentation. If you have any questions, you can message me in our [community slack](https://hackguides.herokuapp.com/).
+</textarea>
+
+        <script type="text/javascript">
+            render_article_text($('#__initial_content__'), $('#article_content'));
+        </script>
+
+        
+            <div id="love-it">
+                <p>Love this guide? Let the community know by clicking the heart!
+                <span class="heart-guide heart">
+                    <span class="heart-count">43</span>
+                </span>
+                </p>
+            </div>
+        
+
+        
+        
+            <div id="contributors" class="row">
+                <div class="col-sm-12">
+                    <h4>Contributors</h4>
+                    <p>
+                        Thanks to the following users who've contributed to
+                        making this the best guide possible!
+                    </p>
+                    <ul>
+                    
+                        <li><a href="https://github.com/WilfredKesh" target="_blank">WilfredKesh</a></li>
+                    
+                        <li><a href="https://github.com/gnujoow" target="_blank">KIM, WOOJUNG</a></li>
+                    
+                        <li><a href="https://github.com/rasmusmaagaard" target="_blank">rasmusmaagaard</a></li>
+                    
+                        <li><a href="https://github.com/dbess1" target="_blank">dbess1</a></li>
+                    
+                        <li><a href="https://github.com/lavika" target="_blank">lavika</a></li>
+                    
+                    </ul>
+                </div>
+                <p>
+                    Have an idea for improving this guide?
+                    <a href="/guides/write/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails?branch=master">Edit this guide<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+
+                    to get on the list!
+                </p>
+            </div>
+        
+
+        <div id="user-info" class="row">
+            <div class="col-sm-4">
+                
+                    <img src="https://avatars0.githubusercontent.com/u/6340189?v=3&amp;s=460" alt=""/>
+                
+
+            </div>
+            <div class="col-sm-8">
+                <h4>Hristo Georgiev</h4>
+                
+    <p>Founder @Centroida🌍.                                                                       
+@Pluralsight author</p>
+    <p>
+        Hristo Georgiev lives in Sofia, Bulgaria and also writes at
+        <a href="http://www.centroida.co" target="_blank">http://www.centroida.co</a>.
+    </p>
+
+
+<p>
+    Dig into code from Kaizeras
+    <a href="http://github.com/Kaizeras" target="_blank"> on Github</a>.
+</p>
+                <p>Read more guides by Hristo Georgiev on their <a href="/guides/author/Kaizeras">profile</a>.</p>
+            </div>
+        </div> <!-- user row -->
+
+
+        
+
+        
+
+        
+
+        
+            <h5>Community suggestions</h5>
+            <ul>
+                
+
+                
+                    
+                        <li>
+                            See dvcarter's <a href="/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails?branch=dvcarter-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"> version of this guide</a> or their <a href="https://github.com/pluralsight/guides/compare/master...dvcarter-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"
+                    target="_blank">suggestions on github</a>.
+                        </li>
+                    
+                
+                    
+                        <li>
+                            See rasmusmaagaard's <a href="/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails?branch=rasmusmaagaard-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"> version of this guide</a> or their <a href="https://github.com/pluralsight/guides/compare/master...rasmusmaagaard-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"
+                    target="_blank">suggestions on github</a>.
+                        </li>
+                    
+                
+                    
+                        <li>
+                            See jesser360's <a href="/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails?branch=jesser360-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"> version of this guide</a> or their <a href="https://github.com/pluralsight/guides/compare/master...jesser360-ruby-ruby-on-rails-building-a-crud-interface-with-react-and-ruby-on-rails"
+                    target="_blank">suggestions on github</a>.
+                        </li>
+                    
+                
+            </ul>
+        
+
+        
+
+        <div id="disqus_thread"></div>
+    </div> <!-- column -->
+</div> <!-- row -->
+
+
+
+            </div><!-- container -->
+            <div id="signup-row" class="row" style="display:none;">
+                <div class="col-md-12">
+                    <span class="close-btn">x</span>
+                    <div class="row">
+                        
+                    </div> <!-- inner row -->
+                </div><!-- col 12 -->
+            </div><!-- row signup -->
+        </div><!-- body -->
+
+        <div id="footer">
+            <div class="container">
+                
+
+
+                                    <div class="row">
+                    <div id="footer-logo-1" class="row">
+                        <div class="col-xs-12">
+                            <a href="http://www.pluralsight.com">
+                                <img src="/guides/static/img/footer_logo.png" width="191" height="42" alt="Pluralsight"/> </a>
+                        </div><!-- col -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>SIGN UP FOR EMAIL UPDATES: The best guides direct to your inbox.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-lg-3" id="footer-logo-2">
+                        <a href="http://www.pluralsight.com">
+                            <img src="/guides/static/img/footer_logo.png" width="191" height="42" alt="Pluralsight"/> </a>
+                    </div><!-- col -->
+
+                    <div class="col-xs-12 col-lg-8">
+                                <div id="signup">
+            <form action="/guides/subscribe" method="POST" id="signup-form" class="form-inline">
+                <div class="form-group form-group-sm">
+                    <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1497459372##11f8226cc194258efb58a4e97e359dc79e9375e4"></div>
+                    <input class="form-control" id="email" name="email" placeholder="Email address" type="email" value="">
+                </div>
+                <div class="form-group form-group-sm">
+                    <select id="stacks-select" name="stacks" class="form-control selectpicker dropup" data-header="Scroll for additional stacks" data-size="6" data-selected-text-format="count > 0" data-dropup-auto="false" title="Your Favorite Topics" multiple>
+                        
+                            <option value="Java and J2EE">Java and J2EE</option>
+                        
+                            <option value="C/C++">C/C++</option>
+                        
+                            <option value="Python">Python</option>
+                        
+                            <option value="PHP">PHP</option>
+                        
+                            <option value="Ruby, Ruby on Rails">Ruby, Ruby on Rails</option>
+                        
+                            <option value="Node.js">Node.js</option>
+                        
+                            <option value="SQL">SQL</option>
+                        
+                            <option value="HTML/CSS">HTML/CSS</option>
+                        
+                            <option value="Lua">Lua</option>
+                        
+                            <option value="Go">Go</option>
+                        
+                            <option value="Scala">Scala</option>
+                        
+                            <option value="Haskell">Haskell</option>
+                        
+                            <option value="Clojure">Clojure</option>
+                        
+                            <option value="Erlang">Erlang</option>
+                        
+                            <option value="Objective C">Objective C</option>
+                        
+                            <option value="Swift">Swift</option>
+                        
+                            <option value="Software Engineering Best Practices">Software Engineering Best Practices</option>
+                        
+                            <option value="Microsoft.NET (C#, ASP.NET, VB.NET, etc)">Microsoft.NET (C#, ASP.NET, VB.NET, etc)</option>
+                        
+                            <option value="Big Data (Hadoop, Spark, etc)">Big Data (Hadoop, Spark, etc)</option>
+                        
+                            <option value="NoSQL Databases (MongoDB, Cassandra, etc)">NoSQL Databases (MongoDB, Cassandra, etc)</option>
+                        
+                            <option value="Interesting APIs (SendGrid, Twilio, etc)">Interesting APIs (SendGrid, Twilio, etc)</option>
+                        
+                            <option value="Front-End JavaScript (Angular, React, Meteor, etc)">Front-End JavaScript (Angular, React, Meteor, etc)</option>
+                        
+                            <option value="DevOps (Docker, Nagios, Jenkins, Chef, Puppet, etc)">DevOps (Docker, Nagios, Jenkins, Chef, Puppet, etc)</option>
+                        
+                            <option value="Android">Android</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group form-group-sm">
+                    <button type="submit" class="btn btn-primary btn-xs" form="signup-form">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!--
+          Workaround for having the 'regular' select flash open on load.
+          Previously we could see the unstyled <select> tag opened before the
+          bootstrap-select js would run and transform it.  This way we'll hide
+          it and then it'll only be visible once the transformation from
+          bootstrap-select happens.
+        -->
+        <script type="text/javascript">
+            $('#stacks-select').hide();
+        </script>
+                    </div><!-- col -->
+
+                    <div class="col-xs-12 col-lg-1 social-links">
+                        <a href="http://www.facebook.com/pluralsight">
+                            <img src="/guides/static/img/fb_footer.png" width="10" height="19" alt="Facebook"/>
+                        </a>
+
+                        <a href="http://www.twitter.com/pluralsight">
+                            <img src="/guides/static/img/twitter_footer.png" width="19" height="15" alt="Twitter"/>
+                        </a>
+                    </div><!-- col social links -->
+                </div><!-- row -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0043/7609.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+                
+
+<script type="text/javascript">
+    
+
+    var article = $('#article');
+
+    populate_table_of_contents(article, $('#table-of-contents'));
+
+    var article_z = article.css('z-index');
+
+    $('#stacks').on('show.bs.select', function(e) {
+        /* Fix to allow bootstrap-select dropdown menu on article sidebar to
+           show up on top of article. The dropdown menu is in a column with
+           "affix" and that seems to obscure the z-index for the dropdown. */
+        article.css('z-index', '-1');
+    });
+
+    $('#stacks').on('hide.bs.select', function(e) {
+        article.css('z-index', article_z);
+    });
+
+    
+        $('.heart-guide').toggleClass('heart', false);
+        $('.heart-guide').toggleClass('heart-empty', true);
+
+        
+        
+
+            $('.heart-guide').prop('title', 'Login to let the community know this guide was useful');
+            $('.heart-guide').click(function() {
+                $('#login-modal').modal();
+            });
+        
+    
+
+</script>
+
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "http://www.pluralsight.com/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails";
+        this.page.identifier = "building-a-crud-interface-with-react-and-ruby-on-rails";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//pluralsighttutorials.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+            </div><!-- container -->
+        </div><!-- footer -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-5643470-17', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    <script type="text/javascript">
+        window.demandbaseTryCount = 0;
+
+        window.fireSatelliteFooter = function(){
+            if (window.dbReady || window.demandbaseTryCount > 10){
+                _satellite.pageBottom();
+            } else{
+                window.demandbaseTryCount++;
+                setTimeout(function(){
+                    fireSatelliteFooter();
+                },200);
+            }
+        }
+
+        fireSatelliteFooter();
+    </script>
+    
+
+    </body>
+</html>
